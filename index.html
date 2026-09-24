@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>تحدي الجاذبية المشوهة - أطوار الفيزياء</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- شاشة القائمة الرئيسية واختيار المستويات -->
+    <div id="menu-layer">
+        <h1 class="menu-title">تشويه الفيزياء 🌀</h1>
+        <p style="color: #bbb; margin-bottom: 20px;">اختر مرحلة للتحدي الأسطوري:</p>
+        <div class="level-grid">
+            <button class="lvl-btn" onclick="selectLevel(1)">1</button>
+            <button class="lvl-btn" onclick="selectLevel(2)">2</button>
+            <button class="lvl-btn" onclick="selectLevel(3)">3</button>
+            <button class="lvl-btn" onclick="selectLevel(4)">4</button>
+            <button class="lvl-btn" onclick="selectLevel(5)">5</button>
+            <button class="lvl-btn" onclick="selectLevel(6)">6</button>
+        </div>
+    </div>
+
+    <!-- شاشة الواجهة العلوية أثناء اللعب -->
+    <div id="ui-layer" style="display: none;">
+        <button class="btn back-btn" onclick="backToMenu()">القائمة ⬅️</button>
+        <div class="level-text" id="levelDisplay">المرحلة: 1</div>
+        <button class="btn" onclick="triggerResetButton()">إعادة 🔄</button>
+    </div>
+
+    <!-- شاشة اختيار الفرشاة السحرية الجانبية -->
+    <div id="ink-selector" style="display: none;">
+        <button class="ink-btn active" id="anti_gravityBtn" onclick="changeInk('anti_gravity')">جاذبية 🌀</button>
+        <button class="ink-btn" id="speed_boosterBtn" onclick="changeInk('speed_booster')">نفاث ⚡</button>
+        <button class="ink-btn" id="scale_shifterBtn" onclick="changeInk('scale_shifter')">تقلص 🔎</button>
+    </div>
+    
+    <canvas id="gameCanvas"></canvas>
+<!-- شاشة الفوز والخسارة والمساعدة -->
+<div id="game-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); color: white; text-align: center; z-index: 1000; padding-top: 20%;">
+    <h1 id="overlay-title">جيم أوفر! ❌</h1>
+    <p id="overlay-message">لقد لمست الشفرات الدوارة!</p>
+    <p>النقاط الحالية: <span id="score-display">0</span></p>
+    <button onclick="restartCurrentLevel()" style="padding: 10px 20px; font-size: 18px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">إعادة المحاولة 🔄</button>
+    <button id="next-level-btn" onclick="goToNextLevel()" style="padding: 10px 20px; font-size: 18px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; display: none;">المرحلة التالية ➡️</button>
+</div>
+
+<!-- زر المساعدة المحدودة (يظهر أثناء اللعب) -->
+<button id="help-btn" onclick="showHelp()" style="position: fixed; bottom: 20px; left: 20px; background: #ffc107; border: none; padding: 10px 15px; border-radius: 50%; font-size: 20px; cursor: pointer; display: none;">❓ <span id="help-count">3</span></button>
+
+    <!-- استدعاء ملفات البرمجة بالترتيب البرمجي الاحترافي المصلح -->
+     <!-- استدعاء ملفات البرمجة بالترتيب من داخل مجلد game.js -->
+<script src="game.js/core.js"></script>
+<script src="game.js/engine.js"></script>
+</body>
+</html>

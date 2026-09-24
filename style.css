@@ -1,0 +1,39 @@
+body {
+    margin: 0; padding: 0; background-color: #111; overflow: hidden;
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh; font-family: sans-serif; user-select: none;
+}
+canvas {
+    background-color: #111116; box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+#menu-layer {
+    position: absolute; width: 100%; max-width: 400px; text-align: center;
+    background: rgba(26, 26, 36, 0.95); padding: 30px; border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6); box-sizing: border-box; display: grid; z-index: 10;
+}
+.menu-title { color: #fff; font-size: 28px; margin: 0 0 10px 0; }
+.level-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.lvl-btn {
+    background: #2f3542; color: white; border: 2px solid #57606f; padding: 15px;
+    font-size: 20px; font-weight: bold; border-radius: 12px; cursor: pointer; transition: 0.2s;
+}
+.lvl-btn:active { background: #ff4757; border-color: #ff4757; }
+#ui-layer {
+    position: absolute; top: 15px; width: 100%; max-width: 430px;
+    display: flex; justify-content: space-between; padding: 0 15px; box-sizing: border-box; pointer-events: none; z-index: 5;
+}
+.btn {
+    background: #ff4757; color: white; border: none; padding: 8px 14px;
+    border-radius: 20px; font-weight: bold; cursor: pointer; pointer-events: auto;
+}
+.back-btn { background: #57606f; }
+.level-text { color: white; font-size: 18px; font-weight: bold; padding-top: 5px; }
+#ink-selector {
+    position: absolute; bottom: 20px; width: 100%; max-width: 420px;
+    display: flex; justify-content: center; gap: 10px; pointer-events: auto; z-index: 5;
+}
+.ink-btn {
+    background: rgba(26, 26, 36, 0.9); color: white; border: 2px solid #fff;
+    padding: 10px 15px; font-weight: bold; border-radius: 15px; cursor: pointer;
+}
+.ink-btn.active { background: #fff; color: #111; }
